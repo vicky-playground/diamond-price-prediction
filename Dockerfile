@@ -1,12 +1,10 @@
-FROM jupyter/base-notebook
+ARG BASE_CONTAINER=jupyter/minimal-notebook
+FROM $BASE_CONTAINER
 
-RUN conda install --quiet --yes \
-    'numpy' \
-    'pandas' \
-    'matplotlib' \
-    'scikit-learn' \
-    'seaborn' \
-    'warnings' \
-    `mercury`
+USER root
+
+RUN pip install numpy pandas matplotlib scikit-learn seaborn warnings mercury
 
 EXPOSE 8888
+
+USER $NB_UID
