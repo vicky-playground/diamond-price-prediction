@@ -6,6 +6,8 @@ USER root
 
 RUN pip install numpy pandas matplotlib scikit-learn seaborn warnings mercury
 
+COPY . .
+
 EXPOSE 8888
 
 USER $NB_UID
