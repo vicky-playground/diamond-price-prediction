@@ -13,3 +13,5 @@ EXPOSE 8888
 USER $NB_UID
 
 ENV JUPYTER_ENABLE_LAB=yes
+
+CMD ["mercury", "run", "0.0.0.0:8888"]
